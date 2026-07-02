@@ -1,6 +1,6 @@
 ---
 // src/pages/privacy.astro
-import Layout from '../layouts/Layout.astro'; // Ojo: sube solo un nivel (..) porque está directo en pages
+import Layout from '../layouts/Layout.astro';
 
 interface LegalSection {
   number: string;
@@ -30,7 +30,101 @@ const legalSections: LegalSection[] = [
       "Social media data: if you interact with us through social media (e.g., by following us or commenting), we may collect public profile information from those platforms."
     ]
   },
-  // ... (el resto de las 10 secciones se mapean igual aquí dentro)
+  {
+    number: "2",
+    titleEs: "Cómo usamos su información",
+    titleEn: "How We Use Your Information",
+    contentEs: "Utilizamos su información personal para los siguientes fines:",
+    contentEn: "We use your personal information for the following purposes:",
+    itemsEs: [
+      "Comunicación: para responder a sus consultas o para enviarle actualizaciones sobre la banda, como fechas de conciertos, lanzamientos de música y otras noticias relacionadas.",
+      "Mejora del Sitio: para analizar cómo los usuarios interactúan con nuestro Sitio y mejorar su experiencia.",
+      "Marketing: si ha dado su consentimiento, podemos enviarle correos electrónicos promocionales y newsletters."
+    ],
+    itemsEn: [
+      "Communication: to respond to your inquiries or send you updates about the band, such as concert dates, music releases, and other related news.",
+      "Site improvement: to analyze how users interact with our Site and enhance their experience.",
+      "Marketing: if you have given your consent, we may send you promotional emails and newsletters."
+    ]
+  },
+  {
+    number: "3",
+    titleEs: "Base legal para el tratamiento de datos",
+    titleEn: "Legal Basis for Data Processing",
+    contentEs: "La base legal para el tratamiento de sus datos dependerá de la finalidad para la cual los utilicemos:",
+    contentEn: "The legal basis for processing your data depends on the purpose for which we use it:",
+    itemsEs: [
+      "Su consentimiento explícito (por ejemplo, para recibir comunicaciones de marketing).",
+      "Cumplimiento de obligaciones contractuales (por ejemplo, si adquiere productos de nuestra tienda).",
+      "Intereses legítimos, como la mejora continua de nuestros servicios and la promoción de nuestra música."
+    ],
+    itemsEn: [
+      "Your explicit consent (e.g., to receive marketing communications).",
+      "Compliance with contractual obligations (e.g., if you purchase products from our store).",
+      "Legitimate interests, such as the continuous improvement of our services and the promotion of our music."
+    ]
+  },
+  {
+    number: "4",
+    titleEs: "Compartir su información",
+    titleEn: "Sharing Your Information",
+    contentEs: "No compartimos, vendemos ni cedemos sus datos personales a terceros.",
+    contentEn: "We do not share, sell, or transfer your personal data to third parties."
+  },
+  {
+    number: "5",
+    titleEs: "Seguridad de la información",
+    titleEn: "Information Security",
+    contentEs: "Implementamos medidas técnicas y organizativas adecuadas para proteger sus datos personales contra el acceso no autorizado, la pérdida o el uso indebido. Sin embargo, ninguna transmisión de datos por Internet es completamente segura, por lo que no podemos garantizar la seguridad absoluta de su información.",
+    contentEn: "We implement appropriate technical and organizational measures to protect your personal data from unauthorized access, loss, or misuse. However, no data transmission over the Internet is entirely secure, so we cannot guarantee absolute security."
+  },
+  {
+    number: "6",
+    titleEs: "Sus derechos",
+    titleEn: "Your Rights",
+    contentEs: "Tiene derecho a:",
+    contentEn: "You have the right to:",
+    itemsEs: [
+      "Acceder, rectificar o eliminar su información personal.",
+      "Retirar su consentimiento para el tratamiento de datos en cualquier momento.",
+      "Oponerse al uso de sus datos para fines de marketing.",
+      "Solicitar la portabilidad de sus datos a otro proveedor."
+    ],
+    itemsEn: [
+      "Access, rectify, or delete your personal information.",
+      "Withdraw your consent for data processing at any time.",
+      "Object to the use of your data for marketing purposes.",
+      "Request the portability of your data to another provider."
+    ]
+  },
+  {
+    number: "7",
+    titleEs: "Cookies",
+    titleEn: "Cookies",
+    contentEs: "Nuestro Sitio utiliza cookies para mejorar la experiencia del usuario y analizar el tráfico. Puede configurar su navegador para que rechace las cookies si lo prefiere, aunque esto podría afectar el funcionamiento del Sitio.",
+    contentEn: "Our Site uses cookies to enhance user experience and analyze traffic. You may configure your browser to reject cookies if you prefer, though this may affect the functionality of the Site."
+  },
+  {
+    number: "8",
+    titleEs: "Enlaces a sitios de terceros",
+    titleEn: "Links to Third-Party Sites",
+    contentEs: "Nuestro Sitio puede contener enlaces a sitios web de terceros, como plataformas de redes sociales o servicios de streaming de música. No somos responsables de las políticas de privacidad de estos sitios externos.",
+    contentEn: "Our Site may contain links to third-party websites, such as social media platforms or music streaming services. We are not responsible for the privacy policies of these external sites."
+  },
+  {
+    number: "9",
+    titleEs: "Cambios en la política de privacidad",
+    titleEn: "Changes to the Privacy Policy",
+    contentEs: "Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Le notificaremos de cualquier cambio publicando la política actualizada en esta página.",
+    contentEn: "We reserve the right to modify this privacy policy at any time. We will notify you of any changes by posting the updated policy on this page."
+  },
+  {
+    number: "10",
+    titleEs: "Contacto",
+    titleEn: "Contact",
+    contentEs: "Si tiene alguna pregunta o inquietud sobre esta política de privacidad, no dude en contactarnos a través de contact@fearsofripley.com.",
+    contentEn: "If you have any questions or concerns about this privacy policy, please feel free to contact us at contact@fearsofripley.com."
+  }
 ];
 ---
 
@@ -38,49 +132,49 @@ const legalSections: LegalSection[] = [
   <main class="bg-[#141313] text-[#aaa9a9] min-h-screen py-16 px-4 md:px-8 font-sans">
     <div class="max-w-4xl mx-auto">
       
-      <!-- Encabezado de la página -->
+      <!-- Encabezado -->
       <header class="text-center mb-16 border-b border-zinc-800 pb-8">
         <h1 class="text-3xl md:text-4xl font-bold tracking-wider text-white mb-2 font-display">POLÍTICA DE PRIVACIDAD</h1>
         <p class="text-xl font-medium text-zinc-500 tracking-widest uppercase">Privacy Policy</p>
       </header>
 
-      <!-- Introducción Bilingüe -->
+      <!-- Introducción -->
       <section class="mb-12 bg-zinc-900/30 p-6 rounded-lg border border-zinc-800/50">
-        <p class="mb-4 text-white font-medium">
-          FEARS OF RIPLEY (en adelante, "FOR") estamos comprometidos a proteger y respetar su privacidad. Esta política de privacidad explica cómo recopilamos, utilizamos y protegemos la información personal que nos proporciona cuando visita nuestro sitio web <span class="text-zinc-300">www.fearsofripley.com</span> (en adelante, “el Sitio”).
+        <p class="mb-4 text-zinc-300 leading-relaxed">
+          FEARS OF RIPLEY (en adelante, "FOR") estamos comprometidos a proteger y respetar su privacidad. Esta política de privacidad explica cómo recopilamos, utilizamos y protegemos la información personal que nos proporciona cuando visita nuestro sitio web <span class="text-white font-semibold">www.fearsofripley.com</span> (en adelante, “el Sitio”).
         </p>
         <hr class="border-zinc-800 my-4" />
-        <p class="text-zinc-400 italic">
-          FEARS OF RIPLEY (hereinafter, "FOR") is committed to protecting and respecting your privacy. This privacy policy explains how we collect, use, and protect the personal information you provide when visiting our website <span class="text-zinc-300">www.fearsofripley.com</span> (hereinafter, “the Site”).
+        <p class="text-zinc-500 italic leading-relaxed">
+          FEARS OF RIPLEY (hereinafter, "FOR") is committed to protecting and respecting your privacy. This privacy policy explains how we collect, use, and protect the personal information you provide when visiting our website <span class="text-zinc-400 font-semibold">www.fearsofripley.com</span> (hereinafter, “the Site”).
         </p>
       </section>
 
-      <!-- Renderizado Dinámico de las Secciones Legales (Data-Ready) -->
+      <!-- Secciones Legales -->
       <div class="space-y-12">
         {legalSections.map((section) => (
-          <article class="border-l-2 border-zinc-700 pl-6 space-y-6">
+          <article class="border-l-2 border-zinc-800 pl-6 space-y-6">
             
             <!-- Bloque Castellano -->
-            <div class="space-y-2">
+            <div class="space-y-3">
               <h2 class="text-lg font-bold text-white tracking-wide uppercase">
                 {section.number}. {section.titleEs}
               </h2>
               <p class="leading-relaxed text-zinc-300">{section.contentEs}</p>
               {section.itemsEs && (
-                <ul class="list-disc list-inside pl-2 space-y-1 text-zinc-400 text-sm">
+                <ul class="list-disc list-inside pl-2 space-y-2 text-zinc-400 text-sm">
                   {section.itemsEs.map((item) => <li>{item}</li>)}
                 </ul>
               )}
             </div>
 
             <!-- Bloque Inglés -->
-            <div class="space-y-2 bg-zinc-900/10 p-3 rounded border border-zinc-800/20">
+            <div class="space-y-3 bg-zinc-900/10 p-4 rounded border border-zinc-900/30">
               <h3 class="text-sm font-bold text-zinc-400 tracking-wide uppercase">
                 {section.number}. {section.titleEn}
               </h3>
               <p class="leading-relaxed text-zinc-500 text-sm">{section.contentEn}</p>
               {section.itemsEn && (
-                <ul class="list-disc list-inside pl-2 space-y-1 text-zinc-600 text-xs">
+                <ul class="list-disc list-inside pl-2 space-y-2 text-zinc-600 text-xs">
                   {section.itemsEn.map((item) => <li>{item}</li>)}
                 </ul>
               )}
@@ -90,11 +184,11 @@ const legalSections: LegalSection[] = [
         ))}
       </div>
 
-      <!-- Footer Unificado de Contacto Directo -->
+      <!-- Footer de Contacto -->
       <footer class="mt-16 pt-8 border-t border-zinc-800 text-center">
-        <p class="text-zinc-400 text-sm">
+        <p class="text-zinc-500 text-sm">
           Canal oficial de contacto de privacidad / Official privacy contact: 
-          <a href="mailto:contact@fearsofripley.com" class="text-white hover:underline transition-all block sm:inline font-semibold mt-1 sm:mt-0 ml-0 sm:ml-1">
+          <a href="mailto:contact@fearsofripley.com" class="text-zinc-300 hover:text-white transition-colors font-semibold block sm:inline mt-1 sm:mt-0 ml-0 sm:ml-1">
             contact@fearsofripley.com
           </a>
         </p>
