@@ -1,0 +1,68 @@
+---
+// Datos estructurados (Data-Ready) para fácil mantenimiento futuro
+const socialLinks = [
+  {
+    name: "Spotify",
+    url: "https://open.spotify.com/intl-es/artist/0r4ueJri1CU0b8q3XUqnkk?si=i2lImJAjToqBp_QNhL8bwQ", // Reemplazar por tu ID real si difiere
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.893-.982-.336.075-.668-.135-.744-.47-.075-.336.135-.668.47-.743 3.856-.88 7.15-.51 9.822 1.127.296.18.387.563.205.857zm1.225-2.72c-.227.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.08-1.182-.413.125-.847-.107-.972-.52-.125-.413.108-.847.52-.972 3.67-1.114 8.24-.57 11.35 1.344.366.226.486.706.26 1.072zm.105-2.836C14.2 8.648 8.035 8.444 4.47 9.526c-.536.162-1.1-.143-1.263-.68-.162-.536.143-1.1.68-1.263 4.103-1.244 10.9-1.01 15.22 1.556.48.285.64.9.356 1.38-.284.48-.9.64-1.38.356z"/></svg>`
+  },
+  {
+    name: "Apple Music",
+    url: "https://music.apple.com/es/artist/fears-of-ripley/1654408771",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>`
+  },
+  {
+    name: "Amazon Music",
+    url: "https://music.amazon.es/artists/B0BMB4G83H/fears-of-ripley",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.32 14.65c-.77-.18-1.42-.51-1.95-1-.53-.49-.79-1.12-.79-1.89 0-.82.31-1.47.93-1.94.62-.47 1.52-.71 2.7-.71h1.43v-.45c0-.49-.09-.85-.28-1.07-.27-.32-.73-.48-1.37-.48-.68 0-1.45.2-2.31.6l-.42-1.17c1.1-.57 2.3-.85 3.61-.85 1.15 0 2 .27 2.56.81.56.54.84 1.39.84 2.55v4.3c0 .35.06.75.18 1.18h-1.63c-.08-.24-.15-.55-.19-.94-.52.7-1.18 1.16-1.98 1.38l-.33-.07zm.89-1.31c.47 0 .88-.13 1.25-.39.37-.26.55-.65.55-1.18v-.88h-1.28c-.68 0-1.19.12-1.51.36-.32.24-.48.58-.48 1.02 0 .38.11.68.34.89.23.21.57.32 1.13.32z"/></svg>`
+  },
+  {
+    name: "Bandcamp",
+    url: "https://fearsofripley.bandcamp.com/",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22 6l-6.5 12H2L8.5 6H22z"/></svg>`
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/fearsofripley",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>`
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/@FearsOfRipley",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>`
+  },
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/34660318514",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>`
+  }
+];
+
+const currentYear = 2026; // Fijado estrictamente según el estado actual
+---
+
+<footer class="footer footer-center p-10 bg-black text-neutral-content border-t border-zinc-800">
+  <nav class="grid grid-flow-col gap-6">
+    {socialLinks.map((link) => (
+      <a 
+        href={link.url} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-zinc-400 hover:text-white transition-colors duration-300"
+        title={`Seguir en ${link.name}`}
+        aria-label={link.name}
+      >
+        <div class="w-6 height-6 flex items-center justify-center" set:html={link.iconSvg} />
+      </a>
+    ))}
+  </nav>
+
+  <aside class="text-zinc-500 text-sm tracking-wide">
+    <p class="mb-2">© {currentYear} <span class="text-zinc-300 font-semibold">FEARS OF RIPLEY</span>. ALL RIGHTS RESERVED.</p>
+    <div class="flex gap-4 justify-center">
+      <a href="/privacy" class="hover:text-zinc-300 underline underline-offset-4 transition-colors">PRIVACY POLICY</a>
+      <span>·</span>
+      <a href="/epk" class="hover:text-zinc-300 underline underline-offset-4 transition-colors">ELECTRONIC PRESS KIT</a>
+    </div>
+  </aside>
+</footer>

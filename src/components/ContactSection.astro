@@ -1,0 +1,69 @@
+---
+// src/components/ContactSection.astro
+const sectionTitle = "Contact & Booking";
+const tagline = "GET IN TOUCH FOR SHOWS, PRESS OR INQUIRIES";
+const contactEmail = "booking@fearsofripley.com";
+---
+
+<section id="contact" class="bg-base-100 py-20 px-4 md:px-8 border-b border-white/5">
+  <div class="max-w-4xl mx-auto flex flex-col items-center">
+    
+    <!-- Encabezado -->
+    <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-wider mb-2 text-center">
+      {sectionTitle}
+    </h2>
+    <p class="text-xs font-bold tracking-[0.3em] text-[#918179] uppercase mb-12 text-center">
+      {tagline}
+    </p>
+
+    <!-- Enlace directo de booking -->
+    <a 
+      href={`mailto:${contactEmail}`} 
+      class="text-xl md:text-2xl font-mono text-white hover:text-primary transition-colors tracking-wide mb-12 uppercase selection:bg-white selection:text-black"
+    >
+      {contactEmail}
+    </a>
+
+    <!-- Formulario Serverless-Ready -->
+    <form action="#" method="POST" class="w-full max-w-xl flex flex-col gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <input 
+          type="text" 
+          name="name" 
+          placeholder="NAME" 
+          required 
+          class="input input-bordered bg-black/40 border-white/10 rounded-none text-white focus:border-primary focus:outline-none placeholder:text-white/20 text-sm tracking-widest"
+        />
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="EMAIL" 
+          required 
+          class="input input-bordered bg-black/40 border-white/10 rounded-none text-white focus:border-primary focus:outline-none placeholder:text-white/20 text-sm tracking-widest"
+        />
+      </div>
+      <input 
+        type="text" 
+        name="subject" 
+        placeholder="SUBJECT" 
+        required 
+        class="input input-bordered bg-black/40 border-white/10 rounded-none text-white focus:border-primary focus:outline-none placeholder:text-white/20 text-sm tracking-widest"
+      />
+      <textarea 
+        name="message" 
+        rows="5" 
+        placeholder="YOUR MESSAGE..." 
+        required 
+        class="textarea textarea-bordered bg-black/40 border-white/10 rounded-none text-white focus:border-primary focus:outline-none placeholder:text-white/20 text-sm tracking-widest min-h-[120px]"
+      ></textarea>
+      
+      <button 
+        type="submit" 
+        class="btn btn-outline btn-primary rounded-none border-2 uppercase font-black tracking-widest text-xs w-full mt-2"
+      >
+        Send Message
+      </button>
+    </form>
+
+  </div>
+</section>

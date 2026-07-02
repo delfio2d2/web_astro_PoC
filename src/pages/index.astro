@@ -1,13 +1,41 @@
 ---
-// index.astro - ¡Tu búnker local!
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import MediaSection from '../components/MediaSection.astro';
+import MusicSection from '../components/MusicSection.astro';
+import TourSection from '../components/TourSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
 ---
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Fears of Ripley | Local Mode</title>
-  </head>
-  <body class="bg-black text-red-600 flex min-h-screen flex-col items-center justify-center font-sans">
-    <h1 class="text-5xl font-black tracking-wider uppercase">FEARS OF RIPLEY - MITO - JAR</h1>
-    <p class="text-gray-400 mt-2">Corriendo en local. El búnker está encendido.</p>
-  </body>
-</html>
+
+<Layout title="FEARS OF RIPLEY | Official Website">
+  <!-- Navegación flotante con rutas relativas del sistema de archivos -->
+  <Navbar />
+
+  <main class="bg-black text-white min-h-screen selection:bg-zinc-800 selection:text-white">
+    <!-- Secciones modulares de la SPA principal (Supabase-Ready) -->
+    <Hero />
+    
+    <div class="space-y-24 pb-24">
+      <section id="media">
+        <MediaSection />
+      </section>
+
+      <section id="music">
+        <MusicSection />
+      </section>
+
+      <section id="tour">
+        <TourSection />
+      </section>
+
+      <section id="contact">
+        <ContactSection />
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer global sincronizado con enlaces locales relativos -->
+  <Footer />
+</Layout>

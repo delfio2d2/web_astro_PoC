@@ -1,0 +1,41 @@
+---
+// src/components/Hero.astro
+
+// Enfoque Data-Ready: Datos aislados listos para futuros cambios
+const title = "FEARS OF RIPLEY";
+const subtitle = "Alternative Prog-Metal";
+const tagline = "MATTER.ANTIMATTER";
+---
+
+<section 
+  id="home" 
+  class="relative min-h-[calc(100vh-78px)] flex items-center justify-center bg-cover bg-center bg-no-repeat overflow-hidden"
+  style="background-image: url('/hero-bg.jpg');"
+>
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+
+  <div class="relative z-10 text-center max-w-4xl px-4 flex flex-col items-center">
+    
+    <p class="text-xs md:text-sm uppercase tracking-[0.6em] text-primary font-bold mb-4 animate-fade-in">
+      {tagline}
+    </p>
+
+    <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white uppercase mb-4 selection:bg-white selection:text-black">
+      FEARS OF <span class="text-primary block md:inline">RIPLEY</span>
+    </h1>
+
+    <p class="text-sm md:text-lg text-gray-400 max-w-xl mx-auto uppercase tracking-widest font-light mb-8">
+      {subtitle}
+    </p>
+
+    <a 
+      href="#media" 
+      class="btn btn-outline btn-primary rounded-none border-2 px-8 uppercase font-bold tracking-widest text-xs hover:scale-105 transition-transform"
+    >
+      Ver Contenido
+    </a>
+
+  </div>
+
+  <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-base-100 to-transparent pointer-events-none"></div>
+</section>

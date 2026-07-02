@@ -1,0 +1,67 @@
+---
+// src/components/Navbar.astro
+// Enfoque Data-Ready: Mapeo de navegación relativo al sistema de archivos local
+const navItems = [
+  { label: "HOME", url: "/" },
+  { label: "MEDIA", url: "/#media" },
+  { label: "MUSIC", url: "/#music" },
+  { label: "TOUR", url: "/#tour" },
+  { label: "CONTACT", url: "/#contact" },
+  { label: "PRESS KIT", url: "/epk" }
+];
+---
+
+<div class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
+  <div class="navbar bg-black/80 backdrop-blur-md border border-zinc-800 rounded-full px-6 py-2 shadow-2xl flex justify-between items-center">
+    
+    <!-- Logotipo Conjunto (Imagen + Texto) / Retorno al Home -->
+    <div class="flex-1">
+      <a href="/" class="flex items-center gap-3 text-white font-bold tracking-widest text-lg font-sans group">
+        <img 
+          src="/images/iso-for.png" 
+          alt="Fears of Ripley Isotype" 
+          width="418" 
+          height="623" 
+          class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          loading="eager"
+        />
+        <span class="transition-colors duration-300 group-hover:text-zinc-300">
+          FEARS OF RIPLEY
+        </span>
+      </a>
+    </div>
+
+    <!-- Menú de Navegación Nata / DaisyUI -->
+    <div class="flex-none hidden md:block">
+      <ul class="menu menu-horizontal p-0 gap-2 text-sm font-medium tracking-wider text-zinc-400">
+        {navItems.map((item) => (
+          <li>
+            <a 
+              href={item.url} 
+              class="hover:text-white rounded-full transition-colors duration-200 px-4 py-2"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Versión Mobile (Menú Hamburguesa DaisyUI sin JS activo) -->
+    <div class="flex-none md:hidden dropdown dropdown-end">
+      <label tabindex="0" class="btn btn-ghost btn-circle text-white" aria-label="Toggle Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+        </svg>
+      </label>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-2xl bg-zinc-950 border border-zinc-800 rounded-xl w-52 gap-1 text-zinc-400">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.url} class="hover:text-white py-2">{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+</div>

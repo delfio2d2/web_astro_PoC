@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+// Enfoque Data-Ready: Datos estructurados aislados del HTML para futuras inyecciones de BD
+const epkData = {
+  title: "Fears of Ripley – Electronic Press Kit",
+  dossierPdfUrl: "/downloads/epk_FOR_2026.pdf",
+  dossierImageUrl: "/images/epk_fears_of_ripley.jpg",
+  bioParagraphs: [
+    "Discover Fears of Ripley, a genre‑defying sonic project that merges atmospheric guitars, analog synthesizers, and dynamic rhythm sections into immersive, cinematic soundscapes.",
+    "Designed for promoters, festival bookers, record labels, and media professionals, this press kit provides a comprehensive yet concise overview of the band’s vision and latest artistic output."
+  ],
+  callToActionText: "Click the image to download the complete EPK dossier. Here you will find:",
+  features: [
+    "A detailed band biography and artistic statement.",
+    "Complete discography with streaming links for singles RED, RPBLCVNT, The Damned, PORTALS, and debut album Theorems About an Unexpected Horizon.",
+    "Live performance highlights, including our 2024 debut and 2026 touring schedule."
+  ],
+  closingParagraph: "For all inquiries regarding booking, press, or collaborative opportunities, please use the dedicated contact information within the EPK. We are readily available to coordinate interviews, discuss festival slots, and plan touring opportunities."
+};
+---
+
+<Layout title="EPK | FEARS OF RIPLEY">
+  <Navbar />
+
+  <main class="min-h-screen bg-black text-white pt-24 pb-12 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      
+      <!-- Columna Izquierda: Visual y Descarga -->
+      <div class="flex justify-center order-2 md:order-1">
+        <a 
+          href={epkData.dossierPdfUrl} 
+          download
+          class="group relative block overflow-hidden rounded-lg border border-zinc-800 transition-all duration-300 hover:border-zinc-500 hover:scale-[1.01] shadow-2xl"
+          aria-label="Download full EPK PDF"
+        >
+          <img 
+            src={epkData.dossierImageUrl} 
+            alt="Fears of Ripley Press Kit Cover" 
+            width="1748" 
+            height="2480"
+            class="w-full max-w-md h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+            loading="eager"
+          />
+          <!-- Overlay interactivo sutil (reemplaza el ícono Divi) -->
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <span class="bg-black/80 px-4 py-2 text-sm font-semibold tracking-widest border border-zinc-700">DOWNLOAD PDF</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Columna Derecha: Copia Editorial -->
+      <div class="flex flex-col space-y-6 order-1 md:order-2">
+        <h1 class="text-3xl md:text-4xl font-bold font-sans tracking-wide text-zinc-100 border-b border-zinc-800 pb-4">
+          {epkData.title}
+        </h1>
+        
+        <div class="space-y-4 text-zinc-400 font-sans leading-relaxed text-base md:text-lg">
+          {epkData.bioParagraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+          
+          <p class="text-zinc-300 font-medium pt-2">
+            {epkData.callToActionText}
+          </p>
+          
+          <ul class="list-disc list-inside space-y-2 pl-2 text-zinc-400">
+            {epkData.features.map((feature) => (
+              <li>{feature}</li>
+            ))}
+          </ul>
+          
+          <p class="pt-2 text-sm md:text-base text-zinc-500 italic">
+            {epkData.closingParagraph}
+          </p>
+        </div>
+
+        <!-- Botón de retorno limpio -->
+        <div class="pt-6">
+          <a 
+            href="/" 
+            class="inline-block px-8 py-3 border-2 border-zinc-700 hover:border-white hover:bg-white hover:text-black font-semibold text-sm tracking-widest uppercase transition-all duration-300"
+          >
+            Back to Home
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
