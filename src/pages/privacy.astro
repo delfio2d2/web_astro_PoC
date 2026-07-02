@@ -1,0 +1,42 @@
+---
+// src/pages/privacy.astro
+import Layout from '../layouts/Layout.astro'; // Ojo: sube solo un nivel (..) porque está directo en pages
+
+interface LegalSection {
+  number: string;
+  titleEs: string;
+  titleEn: string;
+  contentEs: string;
+  contentEn: string;
+  itemsEs?: string[];
+  itemsEn?: string[];
+}
+
+const legalSections: LegalSection[] = [
+  {
+    number: "1",
+    titleEs: "Información que recopilamos",
+    titleEn: "Information We Collect",
+    contentEs: "Cuando visita nuestro Sitio, podemos recopilar y procesar los siguientes datos personales:",
+    contentEn: "When you visit our Site, we may collect and process the following personal data:",
+    itemsEs: [
+      "Información de contacto: como nombre, dirección de correo electrónico, número de teléfono (si decide proporcionarnos esta información al suscribirse a nuestra newsletter o contactarnos).",
+      "Datos de uso: información sobre su interacción con nuestro Sitio, como su dirección IP, tipo de navegador, páginas que visita y la duración de su visita.",
+      "Datos de redes sociales: si interactúa con nosotros a través de redes sociales (por ejemplo, al seguirnos o hacer comentarios), podemos recopilar información pública de su perfil de esas plataformas."
+    ],
+    itemsEn: [
+      "Contact information: such as name, email address, phone number (if you choose to provide this information by subscribing to our newsletter or contacting us).",
+      "Usage data: information about your interaction with our Site, such as your IP address, browser type, pages visited, and the duration of your visit.",
+      "Social media data: if you interact with us through social media (e.g., by following us or commenting), we may collect public profile information from those platforms."
+    ]
+  },
+  // ... (el resto de las 10 secciones se mapean igual aquí dentro)
+];
+---
+
+<Layout title="PRIVACY | FEARS OF RIPLEY">
+  <main class="bg-[#141313] text-[#aaa9a9] min-h-screen py-16 px-4 md:px-8 font-sans">
+    <div class="max-w-4xl mx-auto">
+      </div>
+  </main>
+</Layout>
