@@ -1,9 +1,0 @@
-{
-  "crons": [],
-  "framework": "astro",
-  "functions": {
-    "node_modules/astro/dist/core/render/index.js": {
-      "runtime": "nodejs20.x"
-    }
-  }
-}
